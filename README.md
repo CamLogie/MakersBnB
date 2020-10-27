@@ -1,5 +1,12 @@
 # MakersBnB
 
+# Setting Up Your Databases:
+In your command line run:
+
+ 1) ```$ psql postgres```
+ 2) ```$ CREATE DATABASE makersbnb```
+ 3) ```$ CREATE DATABASE makersbnb_test```
+
 ## User Stories
 
 ```As a user,```
@@ -9,3 +16,4 @@
 ```As a user,```
 ```So that I can properly advertise my place,```
 ```I want to be able to add a short description of my space and nightly price.```
+
