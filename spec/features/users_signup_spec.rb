@@ -10,7 +10,7 @@ feature 'Homepage' do
     fill_in(:name, with: 'Bob')
     fill_in(:user_name, with: 'Bob_007')
     click_button('Submit')
-    expect(page).to have_content 'Renting or Hosting?'
+    expect(page).to have_content 'Hey Bob! Are you renting or hosting?'
   end
 
 

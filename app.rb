@@ -11,8 +11,7 @@ class MakersBnB < Sinatra::Base
 
   # This will collect the user info.
   post '/sign_up' do
-    session[:name] = params[:name]
-    session[:user_name] = params[:user_name]
+    session[:user] = MakersBnB.sign_up(name: params[:name], user_name: params[:user_name])
     redirect '/renting_or_hosting'
   end
 
