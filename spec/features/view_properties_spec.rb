@@ -1,7 +1,7 @@
 feature 'View Properties' do
   scenario 'A user can view a list of listing descriptions alongside their titles' do
     test_properties
-    visit('/properties_list')
+    visit('/properties')
     expect(page).to have_content 'Test Property'
     expect(page).to have_content 'Example Property'
     expect(page).to have_content 'Fake Property'

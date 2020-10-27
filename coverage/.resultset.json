@@ -1,6 +1,20 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/cameronlogie/codingprojects/makers/week_5/MakersBnB/spec/features/add_properties_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/cameronlogie/codingprojects/makers/week_5/MakersBnB/spec/features/homepage_spec.rb": {
         "lines": [
           1,
@@ -40,10 +54,15 @@
           1,
           null,
           null,
+          1,
+          1,
+          1,
+          null,
+          null,
           null
         ]
       }
     },
-    "timestamp": 1603814056
+    "timestamp": 1603817245
   }
 }
