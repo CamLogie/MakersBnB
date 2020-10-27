@@ -7,7 +7,9 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/properties_list' do
-    Property.all.each {|property| puts property}
+    @property = Property.all
+    erb(:properties_list)
+    # Property.all.each {|property| puts property}
   end
 
   run! if app_file == $0
