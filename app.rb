@@ -14,11 +14,17 @@ class MakersBnB < Sinatra::Base
   # This will collect the user info.
   post '/sign_up' do
     p "I'm signing up!"
+    session[:error_msg] = false
     session[:manager] = BnBManager.new
     session[:user] = session[:manager].sign_up(
       name: params[:name], 
       user_name: params[:user_name]
       )
+    if session[:user].is_a? String
+      session[:error_msg] = session[:user]
+      redirect to '/'
+    end
+
     redirect '/renting_or_hosting'
   end
 
