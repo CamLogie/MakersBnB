@@ -8,6 +8,7 @@ require 'rspec'
 require_relative 'setup_test_database'
 require 'simplecov'
 require 'simplecov-console'
+require_relative 'web_helpers'
 
 
 Capybara.app = MakersBnB

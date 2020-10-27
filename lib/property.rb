@@ -11,7 +11,7 @@ class Property
     end
 
     result = connection.exec("SELECT * FROM properties;")
-    result.map {|property| property['listing_title']}
+    p result.map {|property| [property['listing_title'], property['listing_description']] }
 
   end
 
