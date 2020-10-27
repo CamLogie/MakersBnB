@@ -7,13 +7,11 @@ class MakersBnB < Sinatra::Base
 
   # Sign up form/function
   get '/' do
-    p "HERE!"
     erb :index
   end
 
   # This will collect the user info.
   post '/sign_up' do
-    p "I'm signing up!"
     session[:error_msg] = false
     session[:manager] = BnBManager.new
     session[:user] = session[:manager].sign_up(
@@ -30,7 +28,6 @@ class MakersBnB < Sinatra::Base
 
   # This is the landing page for renting or hosting
   get '/renting_or_hosting' do
-    p "I'm done signing up!'"
     erb :renting_or_hosting
   end
 

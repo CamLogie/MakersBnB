@@ -18,7 +18,7 @@ feature 'Homepage' do
 
     visit '/'
     fill_in(:name, with: 'Bob')
-    fill_in(:user_name, with: 'Bob_007')
+    fill_in(:user_name, with: 'Bob_009')
     click_button('Submit')
     expect(page).to have_content 'This user name is already registered!'
   end

@@ -4,6 +4,6 @@ end
 
 def test_add_user
   test_connection
-  @connection.exec("INSERT INTO users (name, user_name) VALUES ('Bob', 'bob_007');")
+  @connection.exec("INSERT INTO users (name, user_name) VALUES ('Bob', 'bob_009');")
 end
 
