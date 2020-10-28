@@ -12,11 +12,11 @@ class Availability
     @availability = []
   end
 
-  def is_available?(date)
+  def available?(date)
     @availability.include?(parse_date(date))
   end
 
-  def range_is_available?(desired_dates)
+  def range_available?(desired_dates)
     desired_dates.each do |date|
       date = parse_date(date)
       return false unless @availability.include?(date)
@@ -24,10 +24,11 @@ class Availability
     true
   end
 
-  #Will need a method to check renter request against availability array
+  # Will need a method to check renter request against availability array
 
-  #This receives the unavailable dates from the host, either as an individual string, or Array in this format: [start_date,end_date]
-  def set_available_dates(date)
+  # This receives the unavailable dates from the host, 
+  # either as an individual string, or Array in this format: [start_date,end_date]
+  def create_available_dates(date)
     @date = date
     @first_day = Date.new(THIS_YEAR, THIS_MONTH, 1)
     @last_day = Date.new(THIS_YEAR, THIS_MONTH, -1)
@@ -43,11 +44,13 @@ class Availability
 
   def choose_avail_array
     return populate_month unless @availability
+
     @availability
   end
 
   def populate_month
     return @availability unless @availability.empty?
+
     months = []
     (@first_day..@last_day).each do |day|
       months << day
@@ -68,9 +71,7 @@ class Availability
   end
 
   def find_and_delete_unavailable_dates
-    if @avail_array.include?(@formatted_date)
-      @avail_array.delete(@formatted_date)
-    end
+    @avail_array.delete(@formatted_date) if @avail_array.include?(@formatted_date)
   end
 
   def generate_start_and_end
