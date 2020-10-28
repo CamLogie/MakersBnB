@@ -1,31 +1,17 @@
 {
   "RSpec": {
     "coverage": {
-
       "/Users/cameronlogie/codingprojects/makers/week_5/MakersBnB/spec/features/add_properties_spec.rb": {
         "lines": [
           1,
           1,
           1,
-
-      "/Users/kcthomas/Makers/MakersBNB/spec/features/users_signup_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-
           1,
           1,
           1,
           1,
           1,
           null,
-
           null
         ]
       },
@@ -35,23 +21,40 @@
           1,
           1,
           1,
-
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-
           null,
           null
         ]
       },
-
+      "/Users/cameronlogie/codingprojects/makers/week_5/MakersBnB/spec/features/users_signup_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/cameronlogie/codingprojects/makers/week_5/MakersBnB/spec/features/view_properties_spec.rb": {
         "lines": [
           1,
@@ -59,8 +62,16 @@
           1,
           1,
           1,
-
-      "/Users/kcthomas/Makers/MakersBNB/spec/unit_tests/makers_bnb_spec.rb": {
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/cameronlogie/codingprojects/makers/week_5/MakersBnB/spec/unit/makers_bnb_spec.rb": {
         "lines": [
           1,
           1,
@@ -82,13 +93,29 @@
           1,
           null,
           null,
-
           1,
           1,
           1,
           1,
-
+          null,
           1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
           null,
           null
         ]
@@ -97,31 +124,24 @@
         "lines": [
           1,
           1,
-
-          null,
-          1,
-          1,
-          1,
           null,
           null,
           1,
           1,
           1,
-          null,
+          1,
+          1,
           null,
           null,
           1,
           1,
           1,
-          null,
-          null,
-          null,
           null,
           null,
           null
         ]
       },
-      "/Users/kcthomas/Makers/MakersBNB/spec/unit_tests/user_spec.rb": {
+      "/Users/cameronlogie/codingprojects/makers/week_5/MakersBnB/spec/unit/user_spec.rb": {
         "lines": [
           1,
           null,
@@ -135,7 +155,6 @@
           1,
           1,
           null,
-
           null,
           null,
           1,
@@ -148,21 +167,15 @@
           1,
           1,
           1,
-
           1,
           null,
           null,
-
           null,
           null,
           null
         ]
       }
     },
-
-    "timestamp": 1603817245
-
-    "timestamp": 1603819067
-
+    "timestamp": 1603879575
   }
 }
