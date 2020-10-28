@@ -26,4 +26,14 @@ describe Availability do
     end
   end
 
+  it 'checks the availablity of given date' do
+    today_date_now = today_date.strftime('%Y-%m-%d')
+    unavail_1 = "#{year}-#{month}-#{(day-11)}"
+    unavail_2 = "#{year}-#{month}-#{(day+3)}"
+    
+    unavailable_dates = [unavail_1, unavail_2]
+    available_range = Availability.set_available_dates(unavailable_dates)
+
+    expect(available_range.is_available?(today_date_now)).to be false
+  end
 end

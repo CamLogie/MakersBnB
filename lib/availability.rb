@@ -44,7 +44,11 @@ class Availability
     @date.each do |single_date|
       make_available_dates(single_date)
     end
+  end
 
+  def is_available?(date)
+    date = Date.parse(date)
+    @availability.include?(date)
   end
 
 end
