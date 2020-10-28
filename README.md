@@ -1,19 +1,22 @@
 # MakersBnB
 
 # Setting Up Your Databases:
-In your command line run:
 
- 1) ```$ psql postgres```
- 2) ```$ CREATE DATABASE makersbnb```
- 3) ```Run the code in the file 01_CREATE_PROPERTIES_TABLE.sql```
- 4) ```$ CREATE DATABASE makersbnb_test```
- 5) ```Run the code in the file 01_CREATE_PROPERTIES_TABLE.sql```
+1. Go to command line and type `psql`
+2. Type: `CREATE DATABASE makers_bnb_manager;`
+3. Type: `CREATE DATABASE makers_bnb_manager_test;`
 
-# Adding Listing Descriptions to Properties Tables
-  
-  1) ``` \c makersbnb ```
-  2) ``` run the code in the file 02_ADD_LISTING_DESCRIPTION.sql ```
-  3) ``` repeat for makersbnb_test database ```
+## Setting Up Your User Tables:
+
+1. Type `\c makers_bnb_manager`
+2. Run the query in the `01_create_user_table.sql` for `makers_bnb_manager`.
+3. Repeat steps 1 and 2 for the `makers_bnb_manager_test` database.
+
+## Setting Up Your Property Tables:
+
+1. Type `\c makers_bnb_manager`
+2. Run the query in the `02_CREATE_PROPERTIES_TABLE.sql` for `makers_bnb_manager`.
+3. Repeat steps 1 and 2 for the `makers_bnb_manager_test` database.
 
 ## User Stories
 
@@ -24,4 +27,5 @@ In your command line run:
 ```As a user,```
 ```So that I can properly advertise my place,```
 ```I want to be able to add a short description of my space and nightly price.```
+
 

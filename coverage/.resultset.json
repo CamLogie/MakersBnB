@@ -1,17 +1,31 @@
 {
   "RSpec": {
     "coverage": {
+
       "/Users/cameronlogie/codingprojects/makers/week_5/MakersBnB/spec/features/add_properties_spec.rb": {
         "lines": [
           1,
           1,
           1,
+
+      "/Users/kcthomas/Makers/MakersBNB/spec/features/users_signup_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+
           1,
           1,
           1,
           1,
           1,
           null,
+
           null
         ]
       },
@@ -21,10 +35,23 @@
           1,
           1,
           1,
+
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+
           null,
           null
         ]
       },
+
       "/Users/cameronlogie/codingprojects/makers/week_5/MakersBnB/spec/features/view_properties_spec.rb": {
         "lines": [
           1,
@@ -32,10 +59,35 @@
           1,
           1,
           1,
+
+      "/Users/kcthomas/Makers/MakersBNB/spec/unit_tests/makers_bnb_spec.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          5,
+          5,
+          null,
+          1,
+          null,
+          1,
+          4,
+          4,
+          null,
+          null,
           1,
           1,
           1,
           1,
+          null,
+          null,
+
+          1,
+          1,
+          1,
+          1,
+
           1,
           null,
           null
@@ -45,6 +97,45 @@
         "lines": [
           1,
           1,
+
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/kcthomas/Makers/MakersBNB/spec/unit_tests/user_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+
           null,
           null,
           1,
@@ -57,12 +148,21 @@
           1,
           1,
           1,
+
+          1,
+          null,
+          null,
+
           null,
           null,
           null
         ]
       }
     },
+
     "timestamp": 1603817245
+
+    "timestamp": 1603819067
+
   }
 }

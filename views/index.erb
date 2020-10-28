@@ -1,0 +1,9 @@
+<h1>Welcome to MakersBnB</h1>
+<% if session[:error_msg] %>
+  <%= session[:error_msg] %>
+<% end %>
+<form action="/sign_up" method=POST>
+  <input type='text' name='name'>
+  <input type='text' name='user_name'>
+  <input type="submit" name="Submit">
+</form>
