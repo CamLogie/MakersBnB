@@ -1,0 +1,1 @@
+ALTER TABLE properties ADD listing_description VARCHAR(800);
