@@ -12,6 +12,9 @@ class Availability
     @availability = availability
   end
 
+  #Will need a method to check renter request against availability array
+  
+  #This receives the unavailable dates from the host, one day at a time
   def self.available_dates(date)
     @date = Date.parse(date)
     @first_day = Date.new(THIS_YEAR, THIS_MONTH, 1)
