@@ -13,25 +13,29 @@ class Availability
   end
 
   #Will need a method to check renter request against availability array
-  
+
   #This receives the unavailable dates from the host, one day at a time
   def self.available_dates(date)
     @date = Date.parse(date)
     @first_day = Date.new(THIS_YEAR, THIS_MONTH, 1)
     @last_day = Date.new(THIS_YEAR, THIS_MONTH, -1)
-    availability = []
+    @avail_array = []
 
-    if date_included?
-      (@first_day..@last_day).each do |day| 
-        availability << day unless day == @date
-      end
-    end
+    make_available_dates
 
-    Availability.new(availability)
+    Availability.new(@avail_array)
   end
 
   def self.date_included?
     (@first_day..@last_day).cover?(@date)
+  end
+
+  def self.make_available_dates
+    if date_included?
+      (@first_day..@last_day).each do |day| 
+        @avail_array << day unless day == @date
+      end
+    end
   end
 
 end
