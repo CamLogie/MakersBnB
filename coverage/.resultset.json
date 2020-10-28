@@ -61,6 +61,22 @@
           null
         ]
       },
+      "/Users/kcthomas/Makers/MakersBnB/spec/unit/availability_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/kcthomas/Makers/MakersBnB/lib/availability.rb": {
+        "lines": [
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/kcthomas/Makers/MakersBnB/spec/unit/makers_bnb_spec.rb": {
         "lines": [
           1,
@@ -166,6 +182,6 @@
         ]
       }
     },
-    "timestamp": 1603882129
+    "timestamp": 1603882293
   }
 }
