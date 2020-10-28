@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/cameronlogie/codingprojects/makers/week_5/MakersBnB/spec/features/add_properties_spec.rb": {
+      "/Users/kcthomas/Makers/MakersBnB/spec/features/add_properties_spec.rb": {
         "lines": [
           1,
           1,
@@ -15,7 +15,7 @@
           null
         ]
       },
-      "/Users/cameronlogie/codingprojects/makers/week_5/MakersBnB/spec/features/users_signup_spec.rb": {
+      "/Users/kcthomas/Makers/MakersBnB/spec/features/users_signup_spec.rb": {
         "lines": [
           1,
           null,
@@ -45,7 +45,7 @@
           null
         ]
       },
-      "/Users/cameronlogie/codingprojects/makers/week_5/MakersBnB/spec/features/view_properties_spec.rb": {
+      "/Users/kcthomas/Makers/MakersBnB/spec/features/view_properties_spec.rb": {
         "lines": [
           1,
           1,
@@ -61,7 +61,7 @@
           null
         ]
       },
-      "/Users/cameronlogie/codingprojects/makers/week_5/MakersBnB/spec/unit/availability_spec.rb": {
+      "/Users/kcthomas/Makers/MakersBnB/spec/unit/availability_spec.rb": {
         "lines": [
           1,
           null,
@@ -88,10 +88,9 @@
           1,
           1,
           null,
-          0,
-          0,
-          0,
-          0,
+          1,
+          1,
+          4,
           null,
           null,
           null,
@@ -99,25 +98,25 @@
           1,
           1,
           1,
-          0,
+          1,
           null,
           null,
           1,
           1,
           1,
-          0,
+          1,
           null,
           null,
           1,
           1,
           1,
-          0,
+          1,
           null,
           null,
           null
         ]
       },
-      "/Users/cameronlogie/codingprojects/makers/week_5/MakersBnB/lib/availability.rb": {
+      "/Users/kcthomas/Makers/MakersBnB/lib/availability.rb": {
         "lines": [
           null,
           null,
@@ -130,7 +129,7 @@
           1,
           null,
           1,
-          1,
+          5,
           null,
           null,
           null,
@@ -141,58 +140,68 @@
           5,
           5,
           5,
+          5,
           null,
           5,
-          1,
+          5,
           null,
-          1,
-          null,
-          null,
-          1,
-          1,
+          5,
           null,
           null,
           1,
+          5,
+          155,
+          null,
+          null,
+          null,
           1,
+          32,
+          null,
+          null,
           1,
+          32,
           1,
+          null,
           31,
+          null,
+          null,
+          32,
+          32,
+          32,
+          null,
+          null,
+          null,
+          null,
+          1,
+          4,
+          4,
+          null,
+          4,
           31,
           null,
-          1,
-          null,
           null,
           null,
           1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          2,
           4,
-          0,
+          4,
           null,
-          0,
-          0,
-          null,
+          1,
           null,
           null,
           1,
-          0,
-          0,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
-          1,
-          0,
+          9,
           null,
           null,
           null
         ]
       },
-      "/Users/cameronlogie/codingprojects/makers/week_5/MakersBnB/spec/unit/makers_bnb_spec.rb": {
+      "/Users/kcthomas/Makers/MakersBnB/spec/unit/makers_bnb_spec.rb": {
         "lines": [
           1,
           1,
@@ -241,7 +250,7 @@
           null
         ]
       },
-      "/Users/cameronlogie/codingprojects/makers/week_5/MakersBnB/spec/unit/properties_spec.rb": {
+      "/Users/kcthomas/Makers/MakersBnB/spec/unit/properties_spec.rb": {
         "lines": [
           1,
           1,
@@ -262,7 +271,7 @@
           null
         ]
       },
-      "/Users/cameronlogie/codingprojects/makers/week_5/MakersBnB/spec/unit/user_spec.rb": {
+      "/Users/kcthomas/Makers/MakersBnB/spec/unit/user_spec.rb": {
         "lines": [
           1,
           null,
@@ -297,6 +306,6 @@
         ]
       }
     },
-    "timestamp": 1603903626
+    "timestamp": 1603906895
   }
 }

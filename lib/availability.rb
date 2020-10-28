@@ -20,11 +20,18 @@ class Availability
     @@first_day = Date.new(THIS_YEAR, THIS_MONTH, 1)
     @@last_day = Date.new(THIS_YEAR, THIS_MONTH, -1)
     @@avail_array = []
+    populate_month
 
     find_dates_in_range if date.is_a? Array
     make_available_dates(date) unless date.is_a? Array
 
-    Availability.new(@@avail_array.uniq)
+    Availability.new(@@avail_array)
+  end
+
+  def self.populate_month
+    (@@first_day..@@last_day).each do |day|
+      @@avail_array << day
+    end
   end
 
   def self.date_included?(date)
@@ -32,13 +39,16 @@ class Availability
   end
 
   def self.make_available_dates(date)
-    parsed_date = Date.parse(date)
-    if date_included?(parsed_date)
-      (@@first_day..@@last_day).each do |day| 
-        @@avail_array << day unless day == parsed_date
-        p [day, parsed_date]
+    if date.is_a? String
+      formatted_date = parse_date(date)
+    else
+      formatted_date = date
+    end
+
+    if date_included?(formatted_date)
+      if @@avail_array.include?(formatted_date)
+        @@avail_array.delete(formatted_date)
       end
-      @@avail_array
     end
   end
 
@@ -64,7 +74,7 @@ class Availability
     true
   end
 
-  def parse_date(date)
+  def self.parse_date(date)
     Date.parse(date)
   end
 

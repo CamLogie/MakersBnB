@@ -24,7 +24,6 @@ describe Availability do
     new_range = Availability.set_available_dates([start_date_string, end_date_string])
     
     expect(new_range.availability).to be_a Array
-    new_range.availability
     (today_date..end_date).each do |unavailable_date|
       expect(new_range.availability).not_to include(unavailable_date)
     end
