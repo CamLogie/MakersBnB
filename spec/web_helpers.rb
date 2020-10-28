@@ -14,6 +14,6 @@ def test_add_user
   @connection.exec("INSERT INTO users (name, user_name) VALUES ('Bob', 'bob_009');")
 end
 
-def parse_date(month, day, year)
+def parse_date_to_s(month, day, year)
   Date.parse "#{year}-#{month}-#{day}"
 end
