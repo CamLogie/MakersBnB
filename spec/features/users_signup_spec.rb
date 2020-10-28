@@ -10,7 +10,7 @@ feature 'Homepage' do
     fill_in(:name, with: 'Bob')
     fill_in(:user_name, with: 'Bob_007')
     click_button('Submit')
-    expect(page).to have_content 'Hey Bob! Are you renting or hosting?'
+    expect(page).to have_content 'Available Properties'
   end
 
   scenario 'does not allow double sign-up' do

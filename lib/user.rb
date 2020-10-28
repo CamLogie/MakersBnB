@@ -2,17 +2,19 @@ require 'pg'
 
 class User
 
-  attr_reader :name, :user_name
+  attr_reader :name, :user_name, :id
 
-  def initialize(name:, user_name:)
+  def initialize(name:, user_name:, id:)
     @name = name
     @user_name = user_name
+    @id = id
   end
 
   #Wraps user info into User object. Will be used with a Database
   def self.add(name:, user_name:)
     return 'This user name is already registered!' if find?(user_name)
-    User.new(name: name, user_name: user_name)
+    result = @@connection.exec("INSERT INTO users (name, user_name) VALUES ('#{name}', '#{user_name}') RETURNING id, name, user_name;")
+    User.new(id: result[0]['id'], name: result[0]['name'], user_name: result[0]['user_name'])
   end
 
   def self.find?(user_name)
