@@ -32,9 +32,10 @@ class Availability
     @first_day = TODAY_DATE
     @last_day = TODAY_DATE.next_day(30)
     @avail_array = populate_month
-
-    find_dates_in_range if date.is_a? Array
-    make_available_dates(date) unless date.is_a? Array
+    unless @date.empty?
+      find_dates_in_range if date.is_a? Array
+      make_available_dates(date) unless date.is_a? Array
+    end
 
     @availability = @avail_array
   end

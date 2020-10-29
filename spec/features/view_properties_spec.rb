@@ -11,6 +11,13 @@ feature 'View Properties' do
     expect(page).to have_link("New Property Listing", :href => "/properties/add_new")
   end
 
-  scenario '' do
+  scenario 'allows a user to choose an available date' do
+    insert_test_properties
+    property = Property.add("New Property For Date Testing", "This property")
+    visit('/properties')
+    select(today, from: "available_dates_#{ property.id }")
+    find("##{ property.id }").click
+
+    expect(page).to have_content "Your request has been approved!"
   end
 end

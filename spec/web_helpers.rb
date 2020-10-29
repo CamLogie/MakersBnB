@@ -4,7 +4,7 @@ def insert_test_properties
   Property.add("Test Property", "This property is a lovely test property brought to you by test property co situated in test, testland")
   Property.add("Example Property", "This property is a lovely example property brought to you by example property enterprises situated in example, exampleland")
   Property.add("Unavailable Property", "This property is probably to bougie for you.")
-  test_add_unavailable_date
+  # test_add_unavailable_date
 end
 
 def test_connection
@@ -16,9 +16,13 @@ def test_add_user
   @connection.exec("INSERT INTO users (name, user_name) VALUES ('Bob', 'bob_009');")
 end
 
+def today
+  DateTime.now.strftime('%B %d, %Y')
+end
+
 def test_add_unavailable_date
   test_connection
-  today_date = DateTime.now
+  today_date = today
   result = @connection.exec(
     # Updating properties sends them to the end of the list in SQL Table
     "UPDATE properties
