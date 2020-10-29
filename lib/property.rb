@@ -22,8 +22,8 @@ class Property
 
     unavailable_dates = "#{start_date}", "#{end_date}"
 
-    result = @@connection.exec("INSERT INTO properties (listing_title, listing_description, unavailable_dates) VALUES('#{listing_title}', '#{listing_description}', '#{start_date}, #{end_date}') 
-    RETURNING id, listing_title, listing_description")
+    result = @@connection.exec("INSERT INTO properties (listing_title, listing_description, unavailable_dates) VALUES('#{listing_title}', '#{listing_description}', '#{start_date},#{end_date}') 
+    RETURNING id, listing_title, listing_description, unavailable_dates")
     Property.new(id: result[0]['id'], title: result[0]['listing_title'], description: result[0]['listing_description'], unavailable_dates: result[0]['unavailable_dates'])
 
   end
