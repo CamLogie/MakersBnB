@@ -51,7 +51,5 @@ class MakersBnB < Sinatra::Base
 #     erb :renting_or_hosting
 #   end
 
-
-
   run! if app_file == $0
 end

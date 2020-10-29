@@ -8,74 +8,80 @@ class Availability
 
   attr_reader :availability
 
-  def initialize(availability)
-    @availability = availability
+  def initialize
+    @availability = []
   end
 
-  #Will need a method to check renter request against availability array
-
-  #This receives the unavailable dates from the host, one day at a time
-  def self.set_available_dates(date)
-    @@date = date
-    @@first_day = Date.new(THIS_YEAR, THIS_MONTH, 1)
-    @@last_day = Date.new(THIS_YEAR, THIS_MONTH, -1)
-    @@avail_array = []
-    populate_month
-
-    find_dates_in_range if date.is_a? Array
-    make_available_dates(date) unless date.is_a? Array
-
-    Availability.new(@@avail_array)
+  def available?(date)
+    @availability.include?(parse_date(date))
   end
 
-  def self.populate_month
-    (@@first_day..@@last_day).each do |day|
-      @@avail_array << day
-    end
-  end
-
-  def self.date_included?(date)
-    (@@first_day..@@last_day).cover?(date)
-  end
-
-  def self.make_available_dates(date)
-    if date.is_a? String
-      formatted_date = parse_date(date)
-    else
-      formatted_date = date
-    end
-
-    if date_included?(formatted_date)
-      if @@avail_array.include?(formatted_date)
-        @@avail_array.delete(formatted_date)
-      end
-    end
-  end
-
-  def self.find_dates_in_range
-    start_date = parse_date(@@date[0])
-    end_date = parse_date(@@date[-1])
-
-    (start_date..end_date).each do |single_date|
-      make_available_dates(single_date)
-    end
-  end
-
-  def is_available?(date)
-    date = Date.parse(date)
-    @availability.include?(date)
-  end
-
-  def range_is_available?(desired_dates)
+  def range_available?(desired_dates)
     desired_dates.each do |date|
-    date = Date.parse(date)
-    return false unless @availability.include?(date)
+      date = parse_date(date)
+      return false unless @availability.include?(date)
     end
     true
   end
 
-  def self.parse_date(date)
-    Date.parse(date)
+  # Will need a method to check renter request against availability array
+
+  # This receives the unavailable dates from the host, 
+  # either as an individual string, or Array in this format: [start_date,end_date]
+  def create_available_dates(date)
+    @date = date
+    @first_day = Date.new(THIS_YEAR, THIS_MONTH, 1)
+    @last_day = Date.new(THIS_YEAR, THIS_MONTH, -1)
+    @avail_array = populate_month
+
+    find_dates_in_range if date.is_a? Array
+    make_available_dates(date) unless date.is_a? Array
+
+    @availability = @avail_array
   end
 
+  private
+
+  def choose_avail_array
+    return populate_month unless @availability
+
+    @availability
+  end
+
+  def populate_month
+    return @availability unless @availability.empty?
+
+    months = []
+    (@first_day..@last_day).each do |day|
+      months << day
+    end
+    months
+  end
+
+  def find_dates_in_range
+    generate_start_and_end
+    (@start_date..@end_date).each do |single_date|
+      make_available_dates(single_date)
+    end
+  end
+
+  def make_available_dates(date)
+    @formatted_date = parse_date(date)
+    find_and_delete_unavailable_dates
+  end
+
+  def find_and_delete_unavailable_dates
+    @avail_array.delete(@formatted_date) if @avail_array.include?(@formatted_date)
+  end
+
+  def generate_start_and_end
+    @start_date = parse_date(@date[0])
+    @end_date = parse_date(@date[-1])
+  end
+
+  def parse_date(date)
+    return date if date.is_a? Date
+
+    Date.parse(date)
+  end
 end

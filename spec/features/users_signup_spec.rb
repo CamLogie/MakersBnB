@@ -23,4 +23,3 @@ feature 'Homepage' do
     expect(page).to have_content 'This user name is already registered!'
   end
 end
-

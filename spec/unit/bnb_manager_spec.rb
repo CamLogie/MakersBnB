@@ -1,7 +1,7 @@
 require_relative '../../lib/bnb_manager.rb'
 require_relative '../../lib/user.rb'
 
-describe MakersBnB do 
+describe BnBManager do 
   let(:new_user) { double :user, name: "Bob", user_name: "bob_00.7" }
   let(:user_class_mock) { double :user_class, add: new_user }
   
@@ -33,13 +33,9 @@ describe MakersBnB do
       expect(new_user).to eq "Usernames can have a max of 20 characters"
     end
 
-
     it 'returns an error message if username if under 5 characters' do
       new_user = @makers_bnb.sign_up(name: 'Teresa', user_name: 'Ter')
       expect(new_user).to eq "Usernames must have at least 5 characters"
     end
   end
 end
-
-
-# Usernames can't be over 20 characters

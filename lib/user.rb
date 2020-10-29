@@ -10,10 +10,11 @@ class User
     @id = id
   end
 
-  #Wraps user info into User object. Will be used with a Database
+  # Wraps user info into User object. Will be used with a Database
   def self.add(name:, user_name:)
     return 'This user name is already registered!' if find?(user_name)
-    result = @@connection.exec("INSERT INTO users (name, user_name) VALUES ('#{name}', '#{user_name}') RETURNING id, name, user_name;")
+
+    result = add_user_and_return_info(name, user_name)
     User.new(id: result[0]['id'], name: result[0]['name'], user_name: result[0]['user_name'])
   end
 
@@ -25,16 +26,23 @@ class User
         WHERE user_name = '#{user_name}';" 
     )
     return true unless db_user_name.none?
+
     false
   end
 
-  # 
   def self.database_connection 
-    if ENV['ENVIRONMENT'] = 'test'
+    if ENV['ENVIRONMENT'] == 'test'
       @@connection = PG.connect :dbname => 'makers_bnb_manager_test'
     else
       @@connection = PG.connect :dbname => 'makers_bnb_manager'
     end
   end
 
+  def self.add_user_and_return_info(name, user_name)
+    @@connection.exec(
+      "INSERT INTO users (name, user_name) 
+      VALUES ('#{name}', '#{user_name}') 
+      RETURNING id, name, user_name;"
+    )
+  end
 end
