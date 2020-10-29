@@ -3,12 +3,16 @@
 
 <% @property.each do |property| %>
 <li><h3><%= property.title %>:</h3><h4><%= property.description%></h4>
-<select name ='available_dates'>
 
-<% property.avalability.each do |date| %>
+<form action= '/book-property' method=POST>
+<%= "<select name ='available_dates_#{property.id}'>" %>
+
+<% property.availability.each do |date| %>
 <%= "<option value=#{date.strftime('%Y-%m-%d')}> #{date.strftime('%B %d, %Y')}</option>"%>
 <% end %>
 </select>
+<%= "<input type='submit' id= #{property.id} value='Request Date'>" %>
+
 </li>
 
 <% end %>

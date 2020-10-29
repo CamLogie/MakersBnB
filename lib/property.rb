@@ -3,12 +3,6 @@ require 'pg'
 class Property
 
   attr_reader :id, :title, :description, :availability
-  
-  def initialize
-    avail_object = Availbility.new
-    @availability = avail_object.create_available_dates([])
-  end
-
 
   def self.all
 
@@ -42,6 +36,9 @@ class Property
     @id = id
     @title = title
     @description = description
+
+    avail_object = Availability.new
+    @availability = avail_object.create_available_dates([])
   end
 
 end
