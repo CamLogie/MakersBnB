@@ -11,7 +11,8 @@ describe Property do
     Property.add("Example Property", "This property is a lovely example property brought to you by example property enterprises situated in example, exampleland", start_date, end_date)
     fake_property = Property.all[0]
     test_property = Property.all[1]
-    example_property = Property.all[-1]
+    example_property = Property.all[-2]
+
     expect(fake_property.title).to include "Fake Property"
     expect(test_property.title).to include "Test Property"
     expect(example_property.title).to include "Example Property"

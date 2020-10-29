@@ -5,10 +5,11 @@ require_relative './lib/bnb_manager.rb'
 class MakersBnB < Sinatra::Base
   
   enable :sessions
-  
-#   get '/' do
-#     'hello world'
-#   end
+
+    # Sign up form/function
+    get '/' do
+      erb :index
+    end
 
   get '/properties/add_new' do
     erb :add_property
@@ -25,9 +26,8 @@ class MakersBnB < Sinatra::Base
     # Property.all.each {|property| puts property}
   end
 
-  # Sign up form/function
-  get '/' do
-    erb :index
+  post '/book-property' do
+    erb :confirmation_page
   end
 
   # This will collect the user info.

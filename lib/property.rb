@@ -1,8 +1,9 @@
 require 'pg'
+require_relative 'availability'
 
 class Property
 
-  attr_reader :id, :title, :description, :unavailable_dates
+  attr_reader :id, :title, :description, :availability, :unavailable_dates
 
   def self.all
 
@@ -49,6 +50,11 @@ class Property
     @title = title
     @description = description
     @unavailable_dates = unavailable_dates.split(",")
+    @availability = create_property_availability
+  end
+  
+  def create_property_availability
+    Availability.new.create_available_dates(@unavailable_dates)
   end
 
 
