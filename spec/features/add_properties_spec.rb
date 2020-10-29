@@ -19,7 +19,7 @@ feature 'Add new property' do
     expect(page).to have_content "This property is a lovely test property brought to you by test property co situated in tes't, testland"
   end
 
-  scenario 'A user can add a start date to their listing via a calendar form'do 
+  scenario 'A user can add a start date and end date to their listing via a calendar form'do 
     test_connection
     visit('properties/add_new')
     fill_in(:listing_title, with: "Test Date Property")

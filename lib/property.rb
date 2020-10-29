@@ -9,7 +9,7 @@ class Property
     environment_var
 
     result = @@connection.exec("SELECT * FROM properties;")
-    result.map {|property| Property.new(id: property['id'], title: property['listing_title'], description: property['listing_description'], start_date: property['start_date'], end_date: property['end_date']) }
+    result.map {|property| Property.new(id: property['id'], title: property['listing_title'], description: property['listing_description'], unavailable_dates: result[0]['unavailable_dates']) }
 
   end
 
@@ -20,9 +20,11 @@ class Property
     listing_title = format_apostrophes(listing_title)
     listing_description = format_apostrophes(listing_description)
 
-    result = @@connection.exec("INSERT INTO properties (listing_title, listing_description) VALUES('#{listing_title}', '#{listing_description}') 
+    unavailable_dates = "#{start_date}", "#{end_date}"
+
+    result = @@connection.exec("INSERT INTO properties (listing_title, listing_description, unavailable_dates) VALUES('#{listing_title}', '#{listing_description}', '#{start_date}, #{end_date}') 
     RETURNING id, listing_title, listing_description")
-    Property.new(id: result[0]['id'], title: result[0]['listing_title'], description: result[0]['listing_description'], start_date: start_date, end_date: end_date)
+    Property.new(id: result[0]['id'], title: result[0]['listing_title'], description: result[0]['listing_description'], unavailable_dates: result[0]['unavailable_dates'])
 
   end
 
@@ -42,11 +44,11 @@ class Property
 
 
 
-  def initialize(id:, title:, description:, start_date:, end_date:)
+  def initialize(id:, title:, description:, unavailable_dates:)
     @id = id
     @title = title
     @description = description
-    @unavailable_dates = [start_date, end_date]
+    @unavailable_dates = unavailable_dates.split(",")
   end
 
 
