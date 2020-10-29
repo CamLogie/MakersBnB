@@ -3,8 +3,7 @@
 # Date class that saves/formats and wraps date availability from Property Database
 
 class Availability
-  THIS_MONTH = Date.today.month
-  THIS_YEAR = Date.today.year
+  TODAY_DATE = DateTime.now
 
   attr_reader :availability
 
@@ -30,8 +29,8 @@ class Availability
   # either as an individual string, or Array in this format: [start_date,end_date]
   def create_available_dates(date)
     @date = date
-    @first_day = Date.new(THIS_YEAR, THIS_MONTH, 1)
-    @last_day = Date.new(THIS_YEAR, THIS_MONTH, -1)
+    @first_day = TODAY_DATE
+    @last_day = TODAY_DATE.next_day(30)
     @avail_array = populate_month
 
     find_dates_in_range if date.is_a? Array
@@ -53,6 +52,8 @@ class Availability
 
     months = []
     (@first_day..@last_day).each do |day|
+      day = day.strftime '%Y-%m-%d'
+      day = Date.parse(day)
       months << day
     end
     months
