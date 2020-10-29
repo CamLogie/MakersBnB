@@ -1,3 +1,4 @@
+
 def insert_test_properties
   test_connection
   Property.add("Fake Property", "This property is a lovely fake property brought to you by fake property ltd situated in fake, fakeland")
@@ -6,6 +7,7 @@ def insert_test_properties
   Property.add("Unavailable Property", "This property is probably to bougie for you.")
   # test_add_unavailable_date
 end
+
 
 def test_connection
   @connection = PG.connect :dbname => 'makers_bnb_manager_test'
