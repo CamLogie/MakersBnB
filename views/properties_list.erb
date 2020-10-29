@@ -6,7 +6,6 @@
 
 <form action= '/book-property' method=POST>
 <%= "<select name ='available_dates_#{property.id}'>" %>
-
 <% property.availability.each do |date| %>
 <%= "<option value=#{date.strftime('%Y-%m-%d')}> #{date.strftime('%B %d, %Y')}</option>"%>
 <% end %>

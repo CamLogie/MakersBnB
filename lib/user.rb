@@ -31,7 +31,7 @@ class User
   end
 
   def self.database_connection 
-    if ENV['ENVIRONMENT'] == 'test'
+    if ENV['RACK_ENV'] == 'test'
       @@connection = PG.connect :dbname => 'makers_bnb_manager_test'
     else
       @@connection = PG.connect :dbname => 'makers_bnb_manager'
