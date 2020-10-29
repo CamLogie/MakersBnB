@@ -2,7 +2,15 @@
 <ul>
 
 <% @property.each do |property| %>
-<li><h3><%= property.title %>:</h3><h4><%= property.description%></h4></li>
+<li><h3><%= property.title %>:</h3><h4><%= property.description%></h4>
+<select name ='available_dates'>
+
+<% property.avalability.each do |date| %>
+<%= "<option value=#{date.strftime('%Y-%m-%d')}> #{date.strftime('%B %d, %Y')}</option>"%>
+<% end %>
+</select>
+</li>
+
 <% end %>
 
 </ul>
