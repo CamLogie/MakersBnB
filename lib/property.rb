@@ -1,4 +1,5 @@
 require 'pg'
+require_relative 'availability'
 
 class Property
 
