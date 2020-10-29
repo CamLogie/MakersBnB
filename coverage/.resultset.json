@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/TimGill/Github/Makers_main/05_Week/MakersBnB/spec/features/add_properties_spec.rb": {
+      "/Users/cameronlogie/codingprojects/makers/week_5/MakersBnB/spec/features/add_properties_spec.rb": {
         "lines": [
           1,
           1,
@@ -30,15 +30,15 @@
           1,
           1,
           1,
-          0,
-          0,
-          0,
-          0,
+          1,
+          1,
+          1,
+          1,
           null,
           null
         ]
       },
-      "/Users/TimGill/Github/Makers_main/05_Week/MakersBnB/spec/features/users_signup_spec.rb": {
+      "/Users/cameronlogie/codingprojects/makers/week_5/MakersBnB/spec/features/users_signup_spec.rb": {
         "lines": [
           1,
           null,
@@ -67,24 +67,26 @@
           null
         ]
       },
-      "/Users/TimGill/Github/Makers_main/05_Week/MakersBnB/spec/features/view_properties_spec.rb": {
+      "/Users/cameronlogie/codingprojects/makers/week_5/MakersBnB/spec/features/view_properties_spec.rb": {
         "lines": [
           1,
           1,
           1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
           null,
           null
         ]
       },
-      "/Users/TimGill/Github/Makers_main/05_Week/MakersBnB/spec/unit/availability_spec.rb": {
+      "/Users/cameronlogie/codingprojects/makers/week_5/MakersBnB/spec/unit/availability_spec.rb": {
         "lines": [
           1,
           null,
@@ -157,7 +159,7 @@
           null
         ]
       },
-      "/Users/TimGill/Github/Makers_main/05_Week/MakersBnB/lib/availability.rb": {
+      "/Users/cameronlogie/codingprojects/makers/week_5/MakersBnB/lib/availability.rb": {
         "lines": [
           null,
           null,
@@ -248,7 +250,7 @@
           null
         ]
       },
-      "/Users/TimGill/Github/Makers_main/05_Week/MakersBnB/spec/unit/bnb_manager_spec.rb": {
+      "/Users/cameronlogie/codingprojects/makers/week_5/MakersBnB/spec/unit/bnb_manager_spec.rb": {
         "lines": [
           1,
           1,
@@ -293,9 +295,24 @@
           null
         ]
       },
-      "/Users/TimGill/Github/Makers_main/05_Week/MakersBnB/spec/unit/properties_spec.rb": {
+      "/Users/cameronlogie/codingprojects/makers/week_5/MakersBnB/spec/unit/properties_spec.rb": {
         "lines": [
           1,
+          null,
+          3,
+          3,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           1,
           null,
           null,
@@ -305,21 +322,13 @@
           1,
           1,
           1,
-          1,
-          1,
           null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
           null,
           null,
           null
         ]
       },
-      "/Users/TimGill/Github/Makers_main/05_Week/MakersBnB/spec/unit/user_spec.rb": {
+      "/Users/cameronlogie/codingprojects/makers/week_5/MakersBnB/spec/unit/user_spec.rb": {
         "lines": [
           1,
           null,
@@ -354,6 +363,6 @@
         ]
       }
     },
-    "timestamp": 1603971214
+    "timestamp": 1603973666
   }
 }

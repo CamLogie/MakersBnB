@@ -15,7 +15,7 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/properties/add_new/id' do
-    Property.add(params[:listing_title], params[:listing_description])
+    Property.add(params[:listing_title], params[:listing_description], params[:start_date], params[:end_date])
     redirect to('/properties')
   end
 
