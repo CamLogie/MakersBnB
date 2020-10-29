@@ -18,5 +18,7 @@ describe Property do
     expect(fake_property.title).to eq "Fake Property"
     expect(fake_property.description).to eq "This property is a lovely fake property brought to you by fake property ltd situated in fake, fakeland"
   end
+
+  it 'can take in two dates'
 end
 
