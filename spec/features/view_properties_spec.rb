@@ -10,4 +10,7 @@ feature 'View Properties' do
     expect(page).to have_content 'This property is a lovely test property brought to you by test property co situated in test, testland'
     expect(page).to have_link("New Property Listing", :href => "/properties/add_new")
   end
+
+  scenario '' do
+  end
 end
