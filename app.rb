@@ -26,7 +26,15 @@ class MakersBnB < Sinatra::Base
     # Property.all.each {|property| puts property}
   end
 
-  post '/book-property' do
+  post '/book-property/:id' do
+    "I posted my info!"
+    requested_date = params.values[0]
+    property = Property.find_property(id: params[:id])
+    session[:confirmation] = property.check_availability?(requested_date)
+    redirect to '/confirmation-page'
+  end
+
+  get '/confirmation-page' do
     erb :confirmation_page
   end
 

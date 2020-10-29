@@ -16,8 +16,9 @@ feature 'View Properties' do
   scenario 'allows a user to choose an available date' do
     # Property.add("Fake Property", "This property is a lovely fake property brought to you by fake property ltd situated in fake, fakeland", "2020-10-29", "2020-11-01")
     property = Property.add("New Property For Date Testing", "This property", "2100-10-15", "2100-10-20")
+    p "I'm first!"
     visit('/properties')
- 
+    p "I'm second!"
     select(three_days_from_now, from: "available_dates_#{ property.id }")
     find("##{ property.id }").click
 
