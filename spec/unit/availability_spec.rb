@@ -8,7 +8,7 @@ describe Availability do
   let(:today_formatted) { today_date.strftime '%Y-%m-%d' }
 
   let(:tomorrow_string) { today_date.next_day(1).strftime '%Y-%m-%d' }
-  let(:unavail_end) { today_date.next_day(5).strftime '%Y-%m-%d'}
+  let(:unavail_end) { today_date.next_day(5).strftime '%Y-%m-%d' }
   let(:unavailable_dates) { [today_formatted, unavail_end] }
 
   before :each do 

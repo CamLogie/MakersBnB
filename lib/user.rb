@@ -32,6 +32,7 @@ class User
 
   def self.retrieve(user_name:)
     return 'This user name does not exist' unless find?(user_name)
+
     result = find_user_and_return_info(user_name)
     User.new(id: result[0]['id'], name: result[0]['name'], user_name: result[0]['user_name'])
   end

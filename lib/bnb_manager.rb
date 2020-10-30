@@ -16,6 +16,7 @@ class BnBManager
     return SYNTAX_ERROR if include_punctuation?(user_name)
     return TOO_LONG_ERROR if too_long?(user_name)
     return TOO_SHORT_ERROR if too_short?(user_name)
+
     @user_class.add(name: name, user_name: user_name)
   end
 

@@ -11,7 +11,6 @@ feature 'View Properties' do
     expect(page).to have_content 'London Test'
   end
 
-
   scenario 'allows a user to choose an available date' do
     insert_test_properties
     visit('/properties')
