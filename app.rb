@@ -34,6 +34,17 @@ class MakersBnB < Sinatra::Base
     redirect to '/confirmation-page'
   end
 
+  post '/view_listing/:id' do 
+    
+    requested_date = params.values[0]
+    session[:property_to_view] = Property.find_property(id: params[:id])
+    redirect '/view_property'
+  end
+
+  get '/view_property' do 
+    erb(:view_your_property)
+  end
+
   get '/confirmation-page' do
     erb :confirmation_page
   end

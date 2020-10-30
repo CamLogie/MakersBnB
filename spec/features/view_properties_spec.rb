@@ -24,4 +24,14 @@ feature 'View Properties' do
 
     expect(page).to have_content "Your request has been approved!"
   end
+
+  scenario 'it allows you to navigate to a specific property page' do 
+    insert_test_properties
+    visit('/properties')
+    first('.property').click_button 'View Property'
+    # save_and_open_page
+    expect(page).to include("Fake Property")
+    expect(page).to include("This property is a lovely fake property brought to you by fake property ltd situated in fake, fakeland")
+  end
+
 end

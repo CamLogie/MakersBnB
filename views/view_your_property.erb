@@ -1,0 +1,12 @@
+
+<li><h3><%= session[:property_to_view].title %>:</h3><h4><%= session[:property_to_view].description%></h4>
+
+<form action= "/book-property/<%= session[:property_to_view].id %>" method=POST>
+<%= "<select name ='available_dates_#{session[:property_to_view].id}'>" %>
+<% session[:property_to_view].availability.each do |date| %>
+<%= "<option value=#{date.strftime('%Y-%m-%d')}> #{date.strftime('%B %d, %Y')}</option>"%>
+<% end %>
+</select>
+<%= "<input type='submit' id=#{session[:property_to_view].id} value='Request Date'>" %>
+</form>
+</li>
