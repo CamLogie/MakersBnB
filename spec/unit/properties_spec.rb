@@ -1,5 +1,10 @@
 describe Property do
 
+  let(:today_date) { DateTime.now }
+  let(:today) { today_date.strftime '%Y-%m-%d' }
+  let(:tomorrow) { today_date.next_day(1).strftime '%Y-%m-%d' }
+  let(:three_days_from_now) { today_date.next_day(3).strftime '%Y-%m-%d' }
+
   let(:start_date) { "2020-10-29" }
   let(:end_date) { "2020-10-30" }
 
@@ -24,5 +29,12 @@ describe Property do
     expect(fake_property.unavailable_dates).to eq ["2020-10-29", "2020-10-30"]
   end
 
+  it 'confirms if the property is available on a requested date' do
+    fake_property = Property.add("Fake Property", "This property is a lovely fake property brought to you by fake property ltd situated in fake, fakeland", tomorrow , three_days_from_now)
+    
+    expect(fake_property.check_availability?(today)).to be true
+    expect(fake_property.check_availability?(tomorrow)).to be false
+    expect(fake_property.check_availability?(three_days_from_now)).to be false
+  end
 end
 

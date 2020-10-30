@@ -51,6 +51,7 @@ class Property
     @title = title
     @description = description
     @unavailable_dates = unavailable_dates.split(",")
+    #availability should be a property object, rather than an array
     @availability = create_property_availability
   end
   
@@ -58,5 +59,24 @@ class Property
     Availability.new.create_available_dates(@unavailable_dates)
   end
 
+  def check_availability?(date)
+    @availability.include?(parse_date(date))
+  end
 
+  def parse_date(date)
+    return date if date.is_a? Date
+
+    Date.parse(date)
+  end
+
+  def self.find_property(id:)
+    environment_var
+
+    result = @@connection.exec("SELECT * FROM properties WHERE id = #{id};") 
+    
+    Property.new(id: result[0]['id'], 
+    title: result[0]['listing_title'], 
+    description: result[0]['listing_description'], 
+    unavailable_dates: result[0]['unavailable_dates'])
+  end
 end

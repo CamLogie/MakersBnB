@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/kcthomas/Makers/MakersBnB/spec/features/add_properties_spec.rb": {
+      "/Users/maggiehibberd/Projects/week_five/LatestBNB/MakersBnB/spec/features/add_properties_spec.rb": {
         "lines": [
           1,
           1,
@@ -38,7 +38,7 @@
           null
         ]
       },
-      "/Users/kcthomas/Makers/MakersBnB/spec/features/users_signup_spec.rb": {
+      "/Users/maggiehibberd/Projects/week_five/LatestBNB/MakersBnB/spec/features/users_signup_spec.rb": {
         "lines": [
           1,
           null,
@@ -67,7 +67,7 @@
           null
         ]
       },
-      "/Users/kcthomas/Makers/MakersBnB/spec/features/view_properties_spec.rb": {
+      "/Users/maggiehibberd/Projects/week_five/LatestBNB/MakersBnB/spec/features/view_properties_spec.rb": {
         "lines": [
           1,
           1,
@@ -88,16 +88,27 @@
           null,
           1,
           1,
-          null,
+          1,
+          1,
           1,
           1,
           null,
           1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
           null,
           null
         ]
       },
-      "/Users/kcthomas/Makers/MakersBnB/spec/unit/availability_spec.rb": {
+      "/Users/maggiehibberd/Projects/week_five/LatestBNB/MakersBnB/spec/unit/availability_spec.rb": {
         "lines": [
           1,
           null,
@@ -178,7 +189,7 @@
           null
         ]
       },
-      "/Users/kcthomas/Makers/MakersBnB/spec/unit/bnb_manager_spec.rb": {
+      "/Users/maggiehibberd/Projects/week_five/LatestBNB/MakersBnB/spec/unit/bnb_manager_spec.rb": {
         "lines": [
           1,
           1,
@@ -223,10 +234,15 @@
           null
         ]
       },
-      "/Users/kcthomas/Makers/MakersBnB/spec/unit/properties_spec.rb": {
+      "/Users/maggiehibberd/Projects/week_five/LatestBNB/MakersBnB/spec/unit/properties_spec.rb": {
         "lines": [
           1,
           null,
+          2,
+          2,
+          2,
+          2,
+          null,
           3,
           3,
           null,
@@ -250,12 +266,19 @@
           1,
           1,
           null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
           null,
           null,
           null
         ]
       },
-      "/Users/kcthomas/Makers/MakersBnB/spec/unit/user_spec.rb": {
+      "/Users/maggiehibberd/Projects/week_five/LatestBNB/MakersBnB/spec/unit/user_spec.rb": {
         "lines": [
           1,
           null,
@@ -290,6 +313,6 @@
         ]
       }
     },
-    "timestamp": 1603988823
+    "timestamp": 1604048997
   }
 }
