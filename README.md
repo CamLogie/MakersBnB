@@ -35,8 +35,8 @@
 1. Clone this repo locally
 2. Run ```$ bundle``` 
 3. Set up your databases and tables using the steps listed below
-4. Run ```$ rackup``` from within the MakersBnB directory
-5. From Google Chrome go to localhost:9292
+4. Run ```$ rackup -p 2345``` from within the MakersBnB directory
+5. From Google Chrome go to `localhost:2345`
 
 ## Setting Up Your Databases:
 
@@ -56,5 +56,13 @@
 2. Run the query in the `02_CREATE_PROPERTIES_TABLE.sql` for `makers_bnb_manager`.
 3. Repeat steps 1 and 2 for the `makers_bnb_manager_test` database.
 
+# How to Use MakersBnB:
 
+Using MakersBnB is pretty simple. To sign up, use your name and enter a username. If you already have an account, just sign-in using your username.
+
+From here, you will see a list of available properties, and the option to view each one. If you click 'View Property', it will take you to the specific page for that property, where you can choose the date you would like to book. Currently, MakersBnB only allows bookings for one night.
+
+If you would like to list your own property, click 'Add Property' on the first listings page, and go through the sets to add your property.
+
+You can click the 'log out' button to log out at any time.
 
