@@ -30,8 +30,8 @@ feature 'View Properties' do
     visit('/properties')
     first('.property').click_button 'View Property'
     # save_and_open_page
-    expect(page).to include("Fake Property")
-    expect(page).to include("This property is a lovely fake property brought to you by fake property ltd situated in fake, fakeland")
+    expect(page).to have_content("Fake Property")
+    expect(page).to have_content("This property is a lovely fake property brought to you by fake property ltd situated in fake, fakeland")
   end
 
 end
