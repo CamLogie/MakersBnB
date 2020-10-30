@@ -66,3 +66,11 @@ If you would like to list your own property, click 'Add Property' on the first l
 
 You can click the 'log out' button to log out at any time.
 
+# Diagrams & Planning
+
+![Listing Property](diagrams/Listing-Property-MakersBNB.png)
+![Listing Property](diagrams/Renting-Request-MakersBNB.png)
+![Listing Property](diagrams/SignIn-MakersBNB.png)
+![Listing Property](diagrams/SignOut-MakersBNB.png)
+![Listing Property](diagrams/SignUp-MakersBNB.png)
+
