@@ -6,22 +6,28 @@
   </head>
 <body>
     
-<%= erb :log_out_button %>
-<center><ul>     
-<h1><%= session[:property_to_view].title %></h1>
-<ul>Location: <%= session[:property_to_view].listing_location %></ul>
-<ul>Price per night: £<%= session[:property_to_view].price_per_night %></ul>
-</ul>Description: <%= session[:property_to_view].description %></ul>
+<center><ul class="property">     
+<h2><%= session[:property_to_view].title %></h2>
+<ul><b>––Location––</b> 
+<p><%= session[:property_to_view].listing_location %></ul>
+<ul><b>––Price per night––</b> 
+<p>£<%= session[:property_to_view].price_per_night %></ul>
+<ul><b>––Description––</b>
+<p><%= session[:property_to_view].description %></ul>
 
-
+<br>
+<br>
 <form action= "/book-property/<%= session[:property_to_view].id %>" method=POST>
 <%= "<select name ='available_dates'>" %>
 <% session[:property_to_view].availability.each do |date| %>
 <%= "<option value=#{date.strftime('%Y-%m-%d')}> #{date.strftime('%B %d, %Y')}</option>"%>
 <% end %>
 </select>
-<%= "<input type='submit' value='Request Date'>" %>
+<p><%= "<input type='submit' value='Request Date'>" %>
 </form>
+</ul>
+<br>
+<%= erb :log_out_button %>
 </center>
 
 </body></html>

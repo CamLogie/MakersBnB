@@ -7,9 +7,9 @@ class MakersBnB < Sinatra::Base
   enable :sessions
 
     # Sign up form/function
-    get '/' do
-      erb :index
-    end
+  get '/' do
+    erb :index
+  end
 
   get '/properties/add_new' do
     erb :add_property

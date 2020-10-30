@@ -11,18 +11,19 @@ h3 {
   font-size: 28px;
 }
 
-input {
-  width: 50%;
+input[type='text'] {
+  width: 20%;
   padding: 12px 20px;
   margin: 8px 0;
+  display: block;
   background-color: black;
-  border: 2px black;
+  border: none;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
   color: white;
 }
 
- body {
+body {
   background-color: lightgrey;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
   font-weight: 300;
@@ -42,4 +43,25 @@ input {
 ul{
   list-style-type: none;
   padding: 0;
+}
+
+input[type='submit'] {
+  width: 15%;
+  height: 10%;
+  border: 0;
+  font-family: HelveticaNeue;
+  color: white;
+  background-color: black;
+}
+
+.confirmation {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: bold;
+  text-align: center;
+  margin-top: 15%;
+  margin-left: 15%;
+  margin-right: 15%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  background-color: aliceblue;
 }

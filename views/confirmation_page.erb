@@ -6,8 +6,9 @@
   </head>
   <body>
 <center>
-
+<div class= 'confirmation'>
 <%= 'Your request has been approved!' if session[:confirmation] == true %>
 <%= 'The date you selected is unavailable' if session[:confirmation] == false %>
-
+</div>
+<br>
 <%= erb :log_out_button %>
