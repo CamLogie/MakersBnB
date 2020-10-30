@@ -14,8 +14,8 @@ def test_connection
 end
 
 def test_add_user
-  test_connection
-  @connection.exec("INSERT INTO users (name, user_name) VALUES ('Bob', 'bob_009');")
+  bnb_manager = BnBManager.new
+  bnb_manager.sign_up(name: 'Bob', user_name: 'bob_009')
 end
 
 def three_days_from_now

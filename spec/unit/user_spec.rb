@@ -24,7 +24,5 @@ describe User do
       user_find = User.find?('peepzgalore')
       expect(user_find).to be false
     end
-
-  end
-
+  end 
 end

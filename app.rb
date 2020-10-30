@@ -67,15 +67,12 @@ class MakersBnB < Sinatra::Base
   post '/sign_in' do
     session[:error_msg] = false
     session[:manager] = BnBManager.new
-    # session[:user] = session[:manager].sign_in(
-    #   name: params[:name], 
-    #   user_name: params[:sign_up_user_name]
-    #   )
-    
-    # if session[:user].is_a? String
-    #   session[:error_msg] = session[:user]
-    #   redirect to '/'
-    # end
+    session[:user] = session[:manager].sign_in(params[:sign_in_user_name])
+
+    if session[:user].is_a? String
+      session[:error_msg] = session[:user]
+      redirect to '/'
+    end
     redirect '/properties'
   end
 

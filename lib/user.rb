@@ -30,6 +30,12 @@ class User
     false
   end
 
+  def self.retrieve(user_name:)
+    return 'This user name does not exist' unless find?(user_name)
+    result = find_user_and_return_info(user_name)
+    User.new(id: result[0]['id'], name: result[0]['name'], user_name: result[0]['user_name'])
+  end
+
   def self.database_connection 
     if ENV['RACK_ENV'] == 'test'
       @@connection = PG.connect :dbname => 'makers_bnb_manager_test'
@@ -43,6 +49,14 @@ class User
       "INSERT INTO users (name, user_name) 
       VALUES ('#{name}', '#{user_name}') 
       RETURNING id, name, user_name;"
+    )
+  end
+
+  def self.find_user_and_return_info(user_name)
+    @@connection.exec(
+      "SELECT *
+       FROM users
+       WHERE user_name = '#{user_name}';"
     )
   end
 end
