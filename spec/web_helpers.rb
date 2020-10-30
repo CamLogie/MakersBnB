@@ -14,8 +14,8 @@ def test_connection
 end
 
 def test_add_user
-  test_connection
-  @connection.exec("INSERT INTO users (name, user_name) VALUES ('Bob', 'bob_009');")
+  bnb_manager = BnBManager.new
+  bnb_manager.sign_up(name: 'Bob', user_name: 'bob_009')
 end
 
 def three_days_from_now
@@ -38,7 +38,7 @@ end
 def sign_in_and_click
   visit '/'
     fill_in(:name, with: 'Bob')
-    fill_in(:user_name, with: 'Bob_007')
-    click_button('Submit')
+    fill_in(:sign_up_user_name, with: 'Bob_007')
+    click_button('Sign Up')
     click_link('New Property Listing')
 end
