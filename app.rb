@@ -16,8 +16,7 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/properties/add_new/id' do
-    Property.add(params[:listing_title], params[:listing_description], params[:start_date], params[:end_date], 
-    params[:price_per_night], params[:listing_location], session[:user].id)
+    Property.add(params[:listing_title], params[:listing_description], params[:start_date], params[:end_date], params[:price_per_night], params[:listing_location], session[:user].id)
     redirect to('/properties')
   end
 
@@ -58,11 +57,11 @@ class MakersBnB < Sinatra::Base
       name: params[:name], 
       user_name: params[:user_name]
       )
+    
     if session[:user].is_a? String
       session[:error_msg] = session[:user]
       redirect to '/'
     end
-
     redirect '/properties'
   end
 

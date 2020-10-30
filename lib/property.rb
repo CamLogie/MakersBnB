@@ -34,7 +34,7 @@ class Property
     result = @@connection.exec(
 
       "INSERT INTO properties (listing_title, listing_description, unavailable_dates, price_per_night, listing_location, user_id) 
-      VALUES('#{listing_title}', '#{listing_description}', '#{start_date},#{end_date}', '#{price_per_night}', '#{listing_location}', '#{user_id} ) 
+      VALUES('#{listing_title}', '#{listing_description}', '#{start_date},#{end_date}', '#{price_per_night}', '#{listing_location}', '#{user_id}') 
       RETURNING id, listing_title, listing_description, unavailable_dates, price_per_night, listing_location, user_id"
       )
     Property.new(
@@ -44,7 +44,7 @@ class Property
       unavailable_dates: result[0]['unavailable_dates'], 
       price_per_night: result[0]['price_per_night'], 
       listing_location: result[0]['listing_location'], 
-      user_id: result[0]['user_id]
+      user_id: result[0]['user_id']
       )
 
   end
@@ -98,7 +98,7 @@ class Property
       unavailable_dates: result[0]['unavailable_dates'], 
       price_per_night: result[0]['price_per_night'], 
       listing_location: result[0]['listing_location'], 
-      user_id: result[0]['user_id]
+      user_id: result[0]['user_id']
      )
   end
 end

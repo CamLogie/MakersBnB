@@ -1,7 +1,7 @@
 
 def insert_test_properties
-  Property.add("Fake Property", "This property is a lovely fake property brought to you by fake property ltd situated in fake, fakeland", "2020-10-29", "2020-11-01", "150", user.id,
-    "London Test")
+  Property.add("Fake Property", "This property is a lovely fake property brought to you by fake property ltd situated in fake, fakeland", "2020-10-29", "2020-11-01", "150",
+    "London Test", user.id,)
   Property.add("Test Property", "This property is a lovely test property brought to you by test property co situated in test, testland", "2020-11-05", "2020-11-10", "150",
     "London Test", user.id)
   Property.add("Example Property", "This property is a lovely example property brought to you by example property enterprises situated in example, exampleland", "2020-10-30",

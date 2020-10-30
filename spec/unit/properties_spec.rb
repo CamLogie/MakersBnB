@@ -48,6 +48,7 @@ describe Property do
     fake_property = Property.add("Fake Property", "This property is a lovely fake property brought to you by fake property ltd situated in fake, fakeland",
       start_date , end_date, price_per_night, location, user.id)
     expect(fake_property.listing_location).to eq 'London Test'
+    end
 
 
   it 'pulls in the users listing via the user id' do
@@ -63,7 +64,6 @@ describe Property do
     expect(fake_property.check_availability?(today)).to be true
     expect(fake_property.check_availability?(tomorrow)).to be false
     expect(fake_property.check_availability?(three_days_from_now)).to be false
-
   end
 
 end
