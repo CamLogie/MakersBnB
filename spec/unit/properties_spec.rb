@@ -1,8 +1,12 @@
 describe Property do
 
+  let(:today_date) { DateTime.now }
+  let(:today) { today_date.strftime '%Y-%m-%d' }
+  let(:tomorrow) { today_date.next_day(1).strftime '%Y-%m-%d' }
+  let(:three_days_from_now) { today_date.next_day(3).strftime '%Y-%m-%d' }
+
   let(:start_date) { "2020-10-29" }
   let(:end_date) { "2020-10-30" }
-  # let(:user) { User.new(name: 'Tim', user_name: 'timcg', id: 1) }
   let(:user) { double :user, name: "Bob", user_name: "bob_00.7", id: '1' }
 
   it 'responds to the .all method by returning each property' do
@@ -26,12 +30,19 @@ describe Property do
     expect(fake_property.unavailable_dates).to eq ["2020-10-29", "2020-10-30"]
   end
 
+
   it 'pulls in the users listing via the user id' do
-    
-    # double(:user) { name: "Bob", user_name: "bob_00.7", id: '1'  }
     Property.add("Tims place", "Great views of Camerons place not to be missed", start_date, end_date, user.id)
     tims_place = Property.all[0]
     expect(tims_place.user_id).to eq '1'
+  end
+
+
+  it 'confirms if the property is available on a requested date' do
+    fake_property = Property.add("Fake Property", "This property is a lovely fake property brought to you by fake property ltd situated in fake, fakeland", tomorrow , three_days_from_now, user.id)
+    expect(fake_property.check_availability?(today)).to be true
+    expect(fake_property.check_availability?(tomorrow)).to be false
+    expect(fake_property.check_availability?(three_days_from_now)).to be false
   end
 
 end

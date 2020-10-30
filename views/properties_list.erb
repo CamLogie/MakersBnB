@@ -2,21 +2,26 @@
 <ul>
 
 <% @property.each do |property| %>
-<li><h3><%= property.title %>:</h3><h4><%= property.description%></h4>
+<li class="property" id="property-<%= property.id %>"><h3><%= property.title %>:</h3><h4><%= property.description%></h4>
 
-<form action= '/book-property' method=POST>
+<form action= "/book-property/<%= property.id %>" method=POST>
 <%= "<select name ='available_dates_#{property.id}'>" %>
 <% property.availability.each do |date| %>
 <%= "<option value=#{date.strftime('%Y-%m-%d')}> #{date.strftime('%B %d, %Y')}</option>"%>
 <% end %>
 </select>
-<%= "<input type='submit' id= #{property.id} value='Request Date'>" %>
+<%= "<input type='submit' id=#{property.id} value='Request Date'>" %>
+</form>
+<form action='/view_listing/<%= property.id %>' method="post">
+<input type='submit' value='View Property' />
+</form></li>
 
-</li>
 
 <% end %>
 
 </ul>
 
 <center><a href='/properties/add_new'>New Property Listing</a></center>
+
+
 

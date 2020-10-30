@@ -13,14 +13,21 @@ feature 'View Properties' do
     p "This test is finished!"
   end
 
-  scenario 'allows a user to choose an available date' do
-    # Property.add("Fake Property", "This property is a lovely fake property brought to you by fake property ltd situated in fake, fakeland", "2020-10-29", "2020-11-01")
+  scenario 'allows a user to choose an available date' do 
     property = Property.add("New Property For Date Testing", "This property", "2100-10-15", "2100-10-20", user.id)
     visit('/properties')
- 
     select(three_days_from_now, from: "available_dates_#{ property.id }")
     find("##{ property.id }").click
-
     expect(page).to have_content "Your request has been approved!"
   end
+
+  scenario 'it allows you to navigate to a specific property page' do 
+    insert_test_properties
+    visit('/properties')
+    first('.property').click_button 'View Property'
+    # save_and_open_page
+    expect(page).to have_content("Fake Property")
+    expect(page).to have_content("This property is a lovely fake property brought to you by fake property ltd situated in fake, fakeland")
+  end
+
 end
