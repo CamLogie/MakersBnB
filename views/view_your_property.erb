@@ -1,5 +1,9 @@
 
-<li><h3><%= session[:property_to_view].title %>:</h3><h4><%= session[:property_to_view].description%></h4>
+<li>      
+<%= session[:property_to_view].title %>
+Location: <%= session[:property_to_view].listing_location %>
+Price per night: £<%= session[:property_to_view].price_per_night %>
+Description: <%= session[:property_to_view].description %>
 
 <form action= "/book-property/<%= session[:property_to_view].id %>" method=POST>
 <%= "<select name ='available_dates'>" %>
