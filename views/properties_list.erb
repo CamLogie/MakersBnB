@@ -7,22 +7,23 @@
   <body>
 <center>
 
-<h2>Available Properties</h2>
+<center><h1>Available Properties</h1></center>
 <ul>
   <% @property.each do |property| %>
     <li class="property" id="property-<%= property.id %>">
       <b><%= property.title %></b>
       <p>Location: <%=property.listing_location %>
       <p>Price per night: £<%=property.price_per_night %>
-
       <form action='/view_listing/<%= property.id %>' method="post">
         <input type='submit' value='View Property' />
       </form>
     </li>
+    </ul>
   <% end %>
-</ul>
+
 
 <center><a href='/properties/add_new'>New Property Listing</a></center>
 
-
+</body>
+</html>
 
