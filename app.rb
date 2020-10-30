@@ -23,7 +23,6 @@ class MakersBnB < Sinatra::Base
   get '/properties' do
     @property = Property.all
     erb(:properties_list)
-    # Property.all.each {|property| puts property}
   end
 
   post '/book-property/:id' do
