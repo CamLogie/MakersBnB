@@ -17,7 +17,7 @@ class MakersBnB < Sinatra::Base
 
   post '/properties/add_new/id' do
     Property.add(params[:listing_title], params[:listing_description], params[:start_date], params[:end_date], 
-    params[:price_per_night], params[:listing_location])
+    params[:price_per_night], params[:listing_location], session[:user].id)
     redirect to('/properties')
   end
 
@@ -27,7 +27,26 @@ class MakersBnB < Sinatra::Base
     # Property.all.each {|property| puts property}
   end
 
-  post '/book-property' do
+  post '/book-property/:id' do
+    "I posted my info!"
+    requested_date = params.values[0]
+    property = Property.find_property(id: params[:id])
+    session[:confirmation] = property.check_availability?(requested_date)
+    redirect to '/confirmation-page'
+  end
+
+  post '/view_listing/:id' do 
+    
+    requested_date = params.values[0]
+    session[:property_to_view] = Property.find_property(id: params[:id])
+    redirect '/view_property'
+  end
+
+  get '/view_property' do 
+    erb(:view_your_property)
+  end
+
+  get '/confirmation-page' do
     erb :confirmation_page
   end
 
@@ -46,11 +65,6 @@ class MakersBnB < Sinatra::Base
 
     redirect '/properties'
   end
-
-  # This is the landing page for renting or hosting
-#   get '/renting_or_hosting' do
-#     erb :renting_or_hosting
-#   end
 
   run! if app_file == $0
 end

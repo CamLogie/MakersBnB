@@ -1,9 +1,11 @@
 
 def insert_test_properties
-  Property.add("Fake Property", "This property is a lovely fake property brought to you by fake property ltd situated in fake, fakeland", "2020-10-29", "2020-11-01", "150", "London Test")
-  Property.add("Test Property", "This property is a lovely test property brought to you by test property co situated in test, testland", "2020-11-05", "2020-11-10", "150", "London Test")
-  Property.add("Example Property", "This property is a lovely example property brought to you by example property enterprises situated in example, exampleland", "2020-10-30", "2020-11-15", "150", "London Test")
-# test_add_unavailable_date
+  Property.add("Fake Property", "This property is a lovely fake property brought to you by fake property ltd situated in fake, fakeland", "2020-10-29", "2020-11-01", "150", user.id,
+    "London Test")
+  Property.add("Test Property", "This property is a lovely test property brought to you by test property co situated in test, testland", "2020-11-05", "2020-11-10", "150",
+    "London Test", user.id)
+  Property.add("Example Property", "This property is a lovely example property brought to you by example property enterprises situated in example, exampleland", "2020-10-30",
+    "2020-11-15", "150", "London Test", user.id)
 end
 
 
@@ -25,11 +27,18 @@ def test_add_unavailable_date
   test_connection
   today_date = today
   result = @connection.exec(
-    # Updating properties sends them to the end of the list in SQL Table
     "UPDATE properties
     SET 
       unavailable_dates = '#{today_date.strftime('%Y-%m-%d')}'
     WHERE
       listing_title = 'Unavailable Property';" 
     )
+end
+
+def sign_in_and_click
+  visit '/'
+    fill_in(:name, with: 'Bob')
+    fill_in(:user_name, with: 'Bob_007')
+    click_button('Submit')
+    click_link('New Property Listing')
 end
