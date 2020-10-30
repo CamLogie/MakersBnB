@@ -1,5 +1,6 @@
 /**/.DS_Store
 /coverage
+/views/renting_or_hosting.erb
 
 # Local cache of Rubocop remote config
 .rubocop-*
