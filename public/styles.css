@@ -2,6 +2,7 @@ h1 {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
   font-weight: 300;
   font-size: 64px
+  text-align: center;
   ;
 }
 
@@ -21,3 +22,19 @@ input {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
   font-weight: 300;
 } 
+
+.property {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+  text-align: center;
+  margin-left: 10%;
+  margin-right: 15%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  background-color: aliceblue;
+} 
+
+ul {
+  list-style-type: none;
+}
+
