@@ -3,7 +3,8 @@ require_relative 'availability'
 
 class Property
 
-  attr_reader :id, :title, :description, :availability, :unavailable_dates, :user_id
+
+  attr_reader :id, :title, :description, :availability, :unavailable_dates, :price_per_night, :listing_location, :user_id
 
   def self.all
 
@@ -14,25 +15,37 @@ class Property
       Property.new(id: property['id'], 
       title: property['listing_title'], 
       description: property['listing_description'], 
-      unavailable_dates: property['unavailable_dates'],
+      unavailable_dates: property['unavailable_dates'], 
+      price_per_night: property['price_per_night'],
+      listing_location: property['listing_location'],
       user_id: property['user_id'])
+      
     end
   end
 
-  def self.add(listing_title, listing_description, start_date, end_date, user_id)
+  def self.add(listing_title, listing_description, start_date, end_date, price_per_night, listing_location, user_id)
 
     environment_var
 
     listing_title = format_apostrophes(listing_title)
     listing_description = format_apostrophes(listing_description)
+    listing_location = format_apostrophes(listing_location)
 
     result = @@connection.exec(
-      "INSERT INTO properties (listing_title, listing_description, unavailable_dates, user_id) 
-      VALUES('#{listing_title}', '#{listing_description}', '#{start_date},#{end_date}', '#{user_id}') 
-      RETURNING id, listing_title, listing_description, unavailable_dates, user_id"
+
+      "INSERT INTO properties (listing_title, listing_description, unavailable_dates, price_per_night, listing_location, user_id) 
+      VALUES('#{listing_title}', '#{listing_description}', '#{start_date},#{end_date}', '#{price_per_night}', '#{listing_location}', '#{user_id} ) 
+      RETURNING id, listing_title, listing_description, unavailable_dates, price_per_night, listing_location, user_id"
       )
-    Property.new(id: result[0]['id'], title: result[0]['listing_title'], description: result[0]['listing_description'], 
-      unavailable_dates: result[0]['unavailable_dates'], user_id: result[0]['user_id'])
+    Property.new(
+      id: result[0]['id'], 
+      title: result[0]['listing_title'], 
+      description: result[0]['listing_description'], 
+      unavailable_dates: result[0]['unavailable_dates'], 
+      price_per_night: result[0]['price_per_night'], 
+      listing_location: result[0]['listing_location'], 
+      user_id: result[0]['user_id]
+      )
 
   end
 
@@ -48,13 +61,14 @@ class Property
     string.split("'").join("''")
   end
 
-  def initialize(id:, title:, description:, unavailable_dates:, user_id:)
+  def initialize(id:, title:, description:, unavailable_dates:, price_per_night:, listing_location:, user_id: )
     @id = id
     @title = title
     @description = description
     @unavailable_dates = unavailable_dates.split(",")
-    #availability should be a property object, rather than an array
     @availability = create_property_availability
+    @price_per_night = price_per_night
+    @listing_location = listing_location
     @user_id = user_id
   end
   
@@ -77,9 +91,14 @@ class Property
 
     result = @@connection.exec("SELECT * FROM properties WHERE id = #{id};") 
     
-    Property.new(id: result[0]['id'], 
-    title: result[0]['listing_title'], 
-    description: result[0]['listing_description'], 
-    unavailable_dates: result[0]['unavailable_dates'])
+     Property.new(
+      id: result[0]['id'], 
+      title: result[0]['listing_title'], 
+      description: result[0]['listing_description'], 
+      unavailable_dates: result[0]['unavailable_dates'], 
+      price_per_night: result[0]['price_per_night'], 
+      listing_location: result[0]['listing_location'], 
+      user_id: result[0]['user_id]
+     )
   end
 end

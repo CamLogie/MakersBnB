@@ -16,8 +16,8 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/properties/add_new/id' do
-    p session[:user]
-    Property.add(params[:listing_title], params[:listing_description], params[:start_date], params[:end_date], session[:user].id)
+    Property.add(params[:listing_title], params[:listing_description], params[:start_date], params[:end_date], 
+    params[:price_per_night], params[:listing_location], session[:user].id)
     redirect to('/properties')
   end
 
@@ -65,11 +65,6 @@ class MakersBnB < Sinatra::Base
 
     redirect '/properties'
   end
-
-  # This is the landing page for renting or hosting
-#   get '/renting_or_hosting' do
-#     erb :renting_or_hosting
-#   end
 
   run! if app_file == $0
 end

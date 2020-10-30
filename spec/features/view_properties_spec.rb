@@ -13,8 +13,9 @@ feature 'View Properties' do
     p "This test is finished!"
   end
 
-  scenario 'allows a user to choose an available date' do 
-    property = Property.add("New Property For Date Testing", "This property", "2100-10-15", "2100-10-20", user.id)
+
+  scenario 'allows a user to choose an available date' do
+    property = Property.add("New Property For Date Testing", "This property", "2100-10-15", "2100-10-20", "London Test", "150", user.id)
     visit('/properties')
     select(three_days_from_now, from: "available_dates_#{ property.id }")
     find("##{ property.id }").click
