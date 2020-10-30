@@ -1,19 +1,28 @@
-<h1>Available Properties</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>MakersBnB</title>
+  </head>
+  <body>
+
+<center><h1>Available Properties</h1></center>
 <ul>
   <% @property.each do |property| %>
     <li class="property" id="property-<%= property.id %>">
-      <%= property.title %>
-      Location: <%=property.listing_location %>
-      Price per night: £<%=property.price_per_night %>
-
+      <h3><%= property.title %></h3>
+      <ul><li> Location: <%=property.listing_location %></li>
+      <li> Price per night: £<%=property.price_per_night %></li></ul>
       <form action='/view_listing/<%= property.id %>' method="post">
         <input type='submit' value='View Property' />
       </form>
     </li>
+    </ul>
   <% end %>
-</ul>
+
 
 <center><a href='/properties/add_new'>New Property Listing</a></center>
 
-
+</body>
+</html>
 

@@ -5,6 +5,14 @@ h1 {
   ;
 }
 
+h3 {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 400;
+  font-size: 28px
+  ;
+}
+
+
 input {
   width: 50%
   padding: 12px 20px;
@@ -21,3 +29,10 @@ input {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
   font-weight: 300;
 } 
+
+ul{
+  list-style-type: circle;
+  margin-left: 2%;
+  margin-bottom: .5%;
+  padding: 0;
+}
