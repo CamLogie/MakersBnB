@@ -1,9 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>MakersBnB</title>
+  </head>
+<body>
+    
 <%= erb :log_out_button %>
-<li>      
-<%= session[:property_to_view].title %>
-Location: <%= session[:property_to_view].listing_location %>
-Price per night: £<%= session[:property_to_view].price_per_night %>
-Description: <%= session[:property_to_view].description %>
+<center><ul>     
+<h1><%= session[:property_to_view].title %></h1>
+<ul>Location: <%= session[:property_to_view].listing_location %></ul>
+<ul>Price per night: £<%= session[:property_to_view].price_per_night %></ul>
+</ul>Description: <%= session[:property_to_view].description %></ul>
+
 
 <form action= "/book-property/<%= session[:property_to_view].id %>" method=POST>
 <%= "<select name ='available_dates'>" %>
@@ -13,4 +22,6 @@ Description: <%= session[:property_to_view].description %>
 </select>
 <%= "<input type='submit' value='Request Date'>" %>
 </form>
-</li>
+</center>
+
+</body></html>

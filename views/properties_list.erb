@@ -1,20 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Property Listings</title>
+  </head>
+  <body>
+<center>
+
 <h1>Available Properties</h1>
+
 <%= erb :log_out_button %>
+
 <ul>
   <% @property.each do |property| %>
     <li class="property" id="property-<%= property.id %>">
-      <%= property.title %>
-      Location: <%=property.listing_location %>
-      Price per night: £<%=property.price_per_night %>
-
+      <b><%= property.title %></b>
+      <p>Location: <%=property.listing_location %>
+      <p>Price per night: £<%=property.price_per_night %>
       <form action='/view_listing/<%= property.id %>' method="post">
         <input type='submit' value='View Property' />
       </form>
     </li>
+    </ul>
   <% end %>
-</ul>
+
 
 <center><a href='/properties/add_new'>New Property Listing</a></center>
 
-
+</body>
+</html>
 
