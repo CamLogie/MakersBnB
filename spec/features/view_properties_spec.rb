@@ -9,7 +9,6 @@ feature 'View Properties' do
     expect(page).to have_content 'Fake Property'
     expect(page).to have_content '£150'
     expect(page).to have_content 'London Test'
-    expect(page).to have_link("New Property Listing", :href => "/properties/add_new")
   end
 
 

@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Confirmation</title>
+  </head>
+  <body>
+<center>
+
 <%= 'Your request has been approved!' if session[:confirmation] == true %>
 <%= 'The date you selected is unavailable' if session[:confirmation] == false %>
 

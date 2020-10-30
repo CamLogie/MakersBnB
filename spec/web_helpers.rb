@@ -37,10 +37,10 @@ end
 
 def sign_in_and_click
   visit '/'
-    fill_in(:name, with: 'Bob')
-    fill_in(:sign_up_user_name, with: 'Bob_007')
-    click_button('Sign Up')
-    click_link('New Property Listing')
+  fill_in(:name, with: 'Bob')
+  fill_in(:sign_up_user_name, with: 'Bob_007')
+  click_button('Sign Up')
+  click_button('New Property Listing')
 end
 
 def sign_in_with_existing_username
