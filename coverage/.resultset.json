@@ -60,6 +60,21 @@
           null
         ]
       },
+      "/Users/kcthomas/Makers/MakersBnB/spec/features/user_sign_out_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/kcthomas/Makers/MakersBnB/spec/features/users_signup_spec.rb": {
         "lines": [
           1,
@@ -87,9 +102,6 @@
           1,
           null,
           null,
-          1,
-          1,
-          1,
           1,
           1,
           1,
@@ -380,6 +392,6 @@
         ]
       }
     },
-    "timestamp": 1604058113
+    "timestamp": 1604059653
   }
 }

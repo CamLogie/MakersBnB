@@ -1,2 +1,4 @@
 <%= 'Your request has been approved!' if session[:confirmation] == true %>
 <%= 'The date you selected is unavailable' if session[:confirmation] == false %>
+
+<%= erb :log_out_button %>

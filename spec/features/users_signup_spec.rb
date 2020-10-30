@@ -24,10 +24,7 @@ feature 'Homepage' do
   end
 
   scenario 'it allows the user to sign in if their username already exists' do
-    test_add_user
-    visit '/'
-    fill_in(:sign_in_user_name, with: 'Bob_009')
-    click_button('Sign In')
+    sign_in_with_existing_username
     expect(page).to have_content 'Available Properties'
   end
 end

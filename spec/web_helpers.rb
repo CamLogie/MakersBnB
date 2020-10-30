@@ -42,3 +42,10 @@ def sign_in_and_click
     click_button('Sign Up')
     click_link('New Property Listing')
 end
+
+def sign_in_with_existing_username
+  test_add_user
+  visit '/'
+  fill_in(:sign_in_user_name, with: 'Bob_009')
+  click_button('Sign In')
+end
